@@ -11,6 +11,7 @@
       --sun: #F5A623;
       --sun-light: #FFC85C;
       --green-deep: #005c5f;
+      --forest: #0D3B26;
       --green-mid: #59f3a1;
       --green-bright: #25A244;
       --green-accent: #3DD68C;
@@ -33,7 +34,7 @@
       overflow-x: hidden;
     }
 
-    h1, h2, h3, h4, h5 { font-family: 'Syne', sans-serif; }
+    h1, h2, h3, h4, h5 { font-family: 'arial', sans-serif; }
 
     /* ── TOP BAR ─────────────────────────────── */
     .topbar {
@@ -131,7 +132,7 @@
 
     /* ── NAV ─────────────────────────────────── */
     nav {
-      background: var(--green-deep);
+      background: var(--forest);
     }
     .nav-inner {
       max-width: 1240px;
@@ -175,38 +176,40 @@
     }
     .nav-cta:hover { background: var(--sun-light) !important; border-bottom: none !important; }
 
-    /* Hamburger */
-    .hamburger {
-      display: none;
-      flex-direction: column;
-      gap: 5px;
-      cursor: pointer;
-      padding: 14px 0;
-    }
-    .hamburger span {
-      display: block;
-      width: 24px; height: 2px;
-      background: #fff;
-      border-radius: 2px;
-      transition: .3s;
-    }
+      .hamburger {
+  display: none; /* THIS HIDES IT ON DESKTOP */
+  flex-direction: column;
+  gap: 5px;
+  cursor: pointer;
+  background: none;
+  border: none;
+  padding: 5px;
+  z-index: 1100;
+  margin-left: auto; /* Keeps it to the right on mobile */
+}
+   .hamburger span {
+  display: block;
+  width: 25px;
+  height: 2px;
+  background: var(--forest); 
+  transition: 0.3s;
+}
 
     /* ── HERO ────────────────────────────────── */
     .hero {
       position: relative;
-      min-height: 92vh;
+      min-height: 95vh;
       display: flex;
       align-items: center;
       overflow: hidden;
-      background: var(--charcoal);
+      background: var(--midnight);
     }
     .hero-bg {
       position: absolute;
       inset: 0;
       background:
-        linear-gradient(135deg, rgba(10,77,46,.92) 0%, rgba(10,30,18,.85) 60%, rgba(0,0,0,.8) 100%),
-        url('https://i0.wp.com/www.rubitecsolar.com/wp-content/uploads/2018/07/power-solar-edited-300x200.jpg?resize=300%2C200/1600x900') center/cover no-repeat;
-      z-index: 0;
+        linear-gradient(105deg, rgba(8,22,14,.97) 0%, rgba(13,59,38,.88) 45%, rgba(8,22,14,.75) 100%),
+        url('https://images.unsplash.com/photo-1509391366360-2e959784a276?w=1600&q=80') center/cover no-repeat;
     }
     /* Animated sun rays */
     .hero-sun {
@@ -734,8 +737,8 @@
       <a href="#" class="logo">
         <div class="logo-mark">R</div>
         <div class="logo-text">
-          <div class="power">RUBITEC POWER</div>
-          <div class="solar">RUBITEC SOLAR</div>
+          <div class="power">FLEMTEC POWER</div>
+          <div class="solar">FLEMTEC SOLAR</div>
         </div>
       </a>
       <div class="header-contact">
@@ -748,6 +751,9 @@
           <div class="value">Mon – Fri &nbsp; 08:00 – 17:00</div>
         </div>
       </div>
+       <button class="hamburger" id="menuBtn" aria-label="Toggle menu">
+    <span></span><span></span><span></span>
+  </button>
     </div>
   </div>
   <nav>
@@ -763,9 +769,7 @@
         <li><a href="#contact">Contact</a></li>
         <li><a href="#contact" class="nav-cta">Get a Quote</a></li>
       </ul>
-      <button class="hamburger" id="menuBtn" aria-label="Toggle menu">
-        <span></span><span></span><span></span>
-      </button>
+      
     </div>
   </nav>
 </header>
@@ -780,7 +784,7 @@
     <div>
       <div class="hero-eyebrow">Nigeria's Renewable Energy Leaders</div>
       <h1>Power Your World<br>With <em>Clean Solar</em><br>Energy</h1>
-      <p class="hero-desc">Rubitec delivers world-class solar, inverter, and renewable energy systems — bringing reliable, eco-friendly power to homes and communities across Africa.</p>
+      <p class="hero-desc">FLEMTEC delivers world-class solar, inverter, and renewable energy systems — bringing reliable, eco-friendly power to homes and communities across Africa.</p>
       <div class="hero-btns">
         <a href="#services" class="btn-primary">
           <svg width="16" height="16" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"/></svg>
@@ -846,8 +850,8 @@
     <div class="about-grid">
       <div>
         <div class="section-label">Who We Are</div>
-        <h2 class="section-title">Rubitec Africa —<br>Built for Renewable Energy</h2>
-        <p class="section-body">Rubitec Nigeria Ltd. specialises in Renewable Energy — Solar and Inverter Backup Systems, Small Hydro Power, Biomass, Waste-to-Energy plants, Land-Fill Gas Plants, and Wind Energy.</p>
+        <h2 class="section-title">FLEMTEC Africa —<br>Built for Renewable Energy</h2>
+        <p class="section-body">FLEMTEC Nigeria Ltd. specialises in Renewable Energy — Solar and Inverter Backup Systems, Small Hydro Power, Biomass, Waste-to-Energy plants, Land-Fill Gas Plants, and Wind Energy.</p>
         <p class="section-body" style="margin-top:16px;">As Nigeria continues to pursue steady, uninterrupted power, we go beyond gas plants and invest in alternative technologies — especially for the rural 60% who need it most.</p>
 
         <div class="vision-block">
@@ -856,9 +860,9 @@
         </div>
       </div>
       <div class="about-img-wrap">
-        <img src="https://i0.wp.com/www.rubitecsolar.com/wp-content/uploads/2018/07/power-solar-edited-300x200.jpg?resize=300%2C200" alt="Rubitec Solar installation" />
+        <img src="https://i0.wp.com/www.rubitecsolar.com/wp-content/uploads/2018/07/power-solar-edited-300x200.jpg?resize=300%2C200" alt="FLEMTEC Solar installation" />
         <div class="about-badge">
-          <span class="num">2006</span>
+          <span class="num">2026</span>
           <span class="txt">Founded in Nigeria</span>
         </div>
       </div>
@@ -983,8 +987,8 @@
       <a href="#" class="logo">
         <div class="logo-mark" style="width:44px;height:44px;font-size:1.2rem;">R</div>
         <div class="logo-text">
-          <div class="power" style="color:#fff;font-size:.95rem;">RUBITEC POWER</div>
-          <div class="solar" style="font-size:.82rem;">RUBITEC SOLAR</div>
+          <div class="power" style="color:#fff;font-size:.95rem;">FLEMTEC POWER</div>
+          <div class="solar" style="font-size:.82rem;">FLEMTEC SOLAR</div>
         </div>
       </a>
       <p>Nigeria's leading integrated renewable energy company — committed to powering a cleaner, brighter Africa.</p>
@@ -1001,7 +1005,7 @@
       <ul>
         <li><a href="#">About Us</a></li>
         <li><a href="#">Our Projects</a></li>
-        <li><a href="#">Rubitec Academy</a></li>
+        <li><a href="#">FLEMTEC Academy</a></li>
         <li><a href="#">Blog</a></li>
         <li><a href="#">Careers</a></li>
       </ul>
@@ -1030,13 +1034,13 @@
       </div>
       <div class="footer-contact-item">
         <svg width="16" height="16" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/></svg>
-        <span>info@rubitecsolar.com</span>
+        <span>info@FLEMTECsolar.com</span>
       </div>
     </div>
   </div>
 
   <div class="footer-bottom">
-    <p>© 2025 Rubitec Solar & Power — All Rights Reserved.</p>
+    <p>© 2025 FLEMTEC Solar & Power — All Rights Reserved.</p>
     <p class="made">Built with ♻️ renewable intent</p>
   </div>
 </footer>
@@ -1044,22 +1048,17 @@
 <script>
   const btn = document.getElementById('menuBtn');
   const nav = document.getElementById('navLinks');
-  btn.addEventListener('click', () => {
-    nav.classList.toggle('open');
-  });
-
-  // Close nav on link click (mobile)
+  btn.addEventListener('click', () => nav.classList.toggle('open'));
   nav.querySelectorAll('a').forEach(link => {
     link.addEventListener('click', () => nav.classList.remove('open'));
   });
 
-  // Sticky header active nav on scroll
-  const sections = document.querySelectorAll('section[id], footer[id]');
+  const sections = document.querySelectorAll('section[id], div[id]');
   const navLinks = document.querySelectorAll('.nav-links a');
   window.addEventListener('scroll', () => {
     let current = '';
     sections.forEach(s => {
-      if (window.scrollY >= s.offsetTop - 120) current = s.id;
+      if (window.scrollY >= s.offsetTop - 140) current = s.id;
     });
     navLinks.forEach(a => {
       a.classList.remove('active');

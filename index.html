@@ -5,92 +5,88 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Flemtech Solar & Power | Renewable Energy Nigeria</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700;900&family=Outfit:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
   <style>
     :root {
-      --gold: #C8902A;
-      --gold-light: #F0B93A;
-      --gold-pale: #FDF3DC;
+      --sun: #F5A623;
+      --sun-light: #FFC85C;
+      --green-deep: #005c5f;
       --forest: #0D3B26;
-      --forest-mid: #1A5C3A;
-      --forest-bright: #2D8653;
-      --forest-accent: #4CAF7D;
-      --midnight: #08160E;
-      --cream: #FAF8F3;
-      --warm-white: #FFFEF9;
-      --charcoal: #1C1C1A;
-      --muted: #6B7B6E;
-      --border: #E2E8E3;
-      --red: #C13030;
+      --green-mid: #59f3a1;
+      --green-bright: #25A244;
+      --green-accent: #3DD68C;
+      --charcoal: #111A14;
+      --off-white: #F7F9F5;
+      --text-soft: #4A5C4E;
+      --red-brand: #D63232;
+      --card-bg: #FFFFFF;
+      --border: #DDE8DF;
     }
 
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
     html { scroll-behavior: smooth; }
 
     body {
-      font-family: 'Outfit', sans-serif;
+      font-family: 'DM Sans', sans-serif;
       color: var(--charcoal);
-      background: var(--cream);
+      background: var(--off-white);
       overflow-x: hidden;
     }
 
-    h1, h2, h3, h4 { font-family: 'Playfair Display', serif; }
+    h1, h2, h3, h4, h5 { font-family: 'arial', sans-serif; }
 
-    /* ── TOPBAR ── */
+    /* ── TOP BAR ─────────────────────────────── */
     .topbar {
-      background: var(--midnight);
-      padding: 10px 0;
-      border-bottom: 1px solid rgba(200,144,42,.15);
+      background: var(--charcoal);
+      color: #A8C4AF;
+      font-size: 0.78rem;
+      padding: 8px 0;
     }
     .topbar-inner {
-      max-width: 1280px;
+      max-width: 1240px;
       margin: auto;
-      padding: 0 32px;
+      padding: 0 24px;
       display: flex;
       justify-content: space-between;
       align-items: center;
+      gap: 12px;
       flex-wrap: wrap;
-      gap: 10px;
     }
-    .topbar-left {
+    .topbar-loc {
       display: flex;
       align-items: center;
       gap: 6px;
-      color: rgba(255,255,255,.55);
-      font-size: .78rem;
-      letter-spacing: .3px;
     }
-    .topbar-left svg { color: var(--gold-light); }
-    .topbar-social { display: flex; gap: 16px; }
+    .topbar-loc svg { color: var(--green-accent); flex-shrink: 0; }
+    .topbar-social { display: flex; gap: 14px; }
     .topbar-social a {
-      color: rgba(255,255,255,.4);
+      color: #A8C4AF;
       transition: color .2s;
-      display: flex;
-      align-items: center;
     }
-    .topbar-social a:hover { color: var(--gold-light); }
+    .topbar-social a:hover { color: var(--sun); }
 
-    /* ── HEADER ── */
+    /* ── MAIN HEADER ─────────────────────────── */
     .main-header {
-      background: var(--warm-white);
+      background: #fff;
       border-bottom: 1px solid var(--border);
       position: sticky;
       top: 0;
       z-index: 100;
-      box-shadow: 0 1px 20px rgba(0,0,0,.06);
+      box-shadow: 0 2px 12px rgba(0,0,0,.06);
     }
     .header-inner {
-      max-width: 1280px;
+      max-width: 1240px;
       margin: auto;
-      padding: 0 32px;
+      padding: 0 24px;
     }
     .header-top {
       display: flex;
       justify-content: space-between;
       align-items: center;
-      padding: 15px 0;
+      padding: 16px 0;
       gap: 20px;
-      flex-wrap: nowrap;
+      flex-wrap: wrap;
     }
     .logo {
       display: flex;
@@ -98,118 +94,89 @@
       gap: 14px;
       text-decoration: none;
     }
-    .logo-emblem {
-      width: 54px;
-      height: 54px;
+    .logo-mark {
+      width: 52px; height: 52px;
+      border-radius: 14px;
+      background: linear-gradient(135deg, var(--green-deep), var(--green-bright));
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-family: 'Syne', sans-serif;
+      font-weight: 800;
+      font-size: 1.5rem;
+      color: #fff;
+      position: relative;
+      overflow: hidden;
       flex-shrink: 0;
     }
-    .logo-text .brand-top {
-      font-family: 'Playfair Display', serif;
-      font-size: 1.25rem;
-      font-weight: 900;
-      color: var(--forest);
-      letter-spacing: -.3px;
-      line-height: 1;
+    .logo-mark::after {
+      content: '';
+      position: absolute;
+      top: -8px; right: -8px;
+      width: 28px; height: 28px;
+      background: var(--sun);
+      border-radius: 50%;
+      opacity: .6;
     }
-    .logo-text .brand-sub {
-      font-size: .72rem;
-      font-weight: 600;
-      letter-spacing: 2.5px;
-      text-transform: uppercase;
-      color: var(--gold);
-      margin-top: 3px;
-    }
+    .logo-text .power { font-size: 1.1rem; font-weight: 800; color: var(--green-deep); letter-spacing: -.3px; }
+    .logo-text .solar { font-size: .95rem; font-weight: 600; color: var(--red-brand); letter-spacing: .5px; }
 
     .header-contact {
       display: flex;
-      gap: 40px;
+      gap: 32px;
+      flex-wrap: wrap;
     }
-    .contact-item .lbl {
-      font-size: .65rem;
-      font-weight: 600;
-      text-transform: uppercase;
-      letter-spacing: 1.2px;
-      color: var(--muted);
-      margin-bottom: 3px;
-    }
-    .contact-item .val {
-      font-size: .85rem;
-      font-weight: 500;
-      color: var(--charcoal);
-    }
+    .contact-item { text-align: right; }
+    .contact-item .label { font-size: .7rem; font-weight: 600; text-transform: uppercase; letter-spacing: .8px; color: var(--text-soft); }
+    .contact-item .value { font-size: .85rem; color: var(--charcoal); font-weight: 500; }
 
-    /* ── NAV ── */
+    /* ── NAV ─────────────────────────────────── */
     nav {
       background: var(--forest);
-      position: relative;
-    }
-    nav::after {
-      content: '';
-      position: absolute;
-      bottom: 0;
-      left: 0;
-      right: 0;
-      height: 2px;
-      background: linear-gradient(90deg, transparent, var(--gold), var(--gold-light), var(--gold), transparent);
     }
     .nav-inner {
-      max-width: 1280px;
+      max-width: 1240px;
       margin: auto;
-      padding: 0 32px;
+      padding: 0 24px;
       display: flex;
       align-items: center;
       justify-content: space-between;
     }
     .nav-links {
       display: flex;
+      gap: 0;
       list-style: none;
     }
     .nav-links a {
       display: block;
-      padding: 15px 16px;
-      color: rgba(255,255,255,.65);
+      padding: 14px 16px;
+      color: rgba(255,255,255,.75);
       text-decoration: none;
-      font-size: .83rem;
+      font-size: .85rem;
       font-weight: 500;
-      letter-spacing: .4px;
+      letter-spacing: .3px;
       transition: all .2s;
-      position: relative;
-    }
-    .nav-links a::after {
-      content: '';
-      position: absolute;
-      bottom: 0;
-      left: 16px;
-      right: 16px;
-      height: 2px;
-      background: var(--gold-light);
-      transform: scaleX(0);
-      transition: transform .25s;
+      border-bottom: 3px solid transparent;
     }
     .nav-links a:hover,
     .nav-links a.active {
       color: #fff;
+      border-bottom-color: var(--sun);
+      background: rgba(255,255,255,.05);
     }
-    .nav-links a:hover::after,
-    .nav-links a.active::after { transform: scaleX(1); }
     .nav-cta {
-      background: var(--gold) !important;
-      color: var(--forest) !important;
-      padding: 9px 22px !important;
-      border-radius: 6px;
+      background: var(--sun);
+      color: var(--charcoal) !important;
+      padding: 10px 20px !important;
+      border-radius: 8px;
       font-weight: 700 !important;
-      font-size: .82rem !important;
+      letter-spacing: .4px !important;
       margin-left: 12px;
-      letter-spacing: .6px !important;
-      text-transform: uppercase !important;
-      transition: background .2s !important;
-      text-align: center;
-      margin: 20px !important;
+      border-bottom: none !important;
     }
-    .nav-cta::after { display: none !important; }
-    .nav-cta:hover { background: var(--gold-light) !important; }
+    .nav-cta:hover { background: var(--sun-light) !important; border-bottom: none !important; }
 
-    .hamburger {
+      .hamburger {
   display: none; /* THIS HIDES IT ON DESKTOP */
   flex-direction: column;
   gap: 5px;
@@ -220,7 +187,7 @@
   z-index: 1100;
   margin-left: auto; /* Keeps it to the right on mobile */
 }
-  .hamburger span {
+   .hamburger span {
   display: block;
   width: 25px;
   height: 2px;
@@ -228,8 +195,7 @@
   transition: 0.3s;
 }
 
-
-    /* ── HERO ── */
+    /* ── HERO ────────────────────────────────── */
     .hero {
       position: relative;
       min-height: 95vh;
@@ -245,880 +211,515 @@
         linear-gradient(105deg, rgba(8,22,14,.97) 0%, rgba(13,59,38,.88) 45%, rgba(8,22,14,.75) 100%),
         url('https://images.unsplash.com/photo-1509391366360-2e959784a276?w=1600&q=80') center/cover no-repeat;
     }
-    /* Grain texture overlay */
-    .hero-grain {
+    /* Animated sun rays */
+    .hero-sun {
+      position: absolute;
+      top: -60px; right: -60px;
+      width: 500px; height: 500px;
+      background: radial-gradient(circle, rgba(245,166,35,.18) 0%, transparent 70%);
+      animation: pulse-sun 4s ease-in-out infinite;
+      z-index: 1;
+    }
+    @keyframes pulse-sun {
+      0%,100% { transform: scale(1); opacity: .8; }
+      50% { transform: scale(1.15); opacity: 1; }
+    }
+    .hero-grid-overlay {
       position: absolute;
       inset: 0;
-      background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.06'/%3E%3C/svg%3E");
-      opacity: .4;
+      background-image:
+        linear-gradient(rgba(61,214,140,.04) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(61,214,140,.04) 1px, transparent 1px);
+      background-size: 60px 60px;
       z-index: 1;
     }
-    /* Gold arc decoration */
-    .hero-arc {
-      position: absolute;
-      right: -100px;
-      top: 50%;
-      transform: translateY(-50%);
-      width: 700px;
-      height: 700px;
-      border: 1.5px solid rgba(200,144,42,.12);
-      border-radius: 50%;
-      z-index: 1;
-    }
-    .hero-arc::before {
-      content: '';
-      position: absolute;
-      inset: 40px;
-      border: 1px solid rgba(200,144,42,.08);
-      border-radius: 50%;
-    }
-    .hero-arc::after {
-      content: '';
-      position: absolute;
-      inset: 100px;
-      border: 1px solid rgba(200,144,42,.05);
-      border-radius: 50%;
-    }
-    /* Sun glow */
-    .hero-glow {
-      position: absolute;
-      top: 10%;
-      right: 10%;
-      width: 400px;
-      height: 400px;
-      background: radial-gradient(circle, rgba(200,144,42,.18) 0%, rgba(200,144,42,.06) 50%, transparent 75%);
-      z-index: 1;
-      animation: breathe 5s ease-in-out infinite;
-    }
-    @keyframes breathe {
-      0%, 100% { transform: scale(1); opacity: .8; }
-      50% { transform: scale(1.08); opacity: 1; }
-    }
-
     .hero-content {
       position: relative;
       z-index: 2;
-      max-width: 1280px;
+      max-width: 1240px;
       margin: auto;
-      padding: 100px 32px;
+      padding: 80px 24px;
       display: grid;
-      grid-template-columns: 1.1fr 1fr;
-      gap: 80px;
+      grid-template-columns: 1fr 1fr;
       align-items: center;
+      gap: 60px;
     }
-
-    .hero-badge {
+    .hero-eyebrow {
       display: inline-flex;
       align-items: center;
-      gap: 10px;
-      margin-bottom: 28px;
-    }
-    .hero-badge-line {
-      width: 40px;
-      height: 1px;
-      background: var(--gold);
-    }
-    .hero-badge-text {
-      font-size: .72rem;
+      gap: 8px;
+      background: rgba(61,214,140,.12);
+      border: 1px solid rgba(61,214,140,.3);
+      color: var(--green-accent);
+      font-size: .78rem;
       font-weight: 600;
-      letter-spacing: 2.5px;
+      letter-spacing: 1.2px;
       text-transform: uppercase;
-      color: var(--gold-light);
-    }
-
-    .hero h1 {
-      font-size: clamp(2.8rem, 5.5vw, 4.8rem);
-      font-weight: 900;
-      color: #fff;
-      line-height: 1.05;
-      letter-spacing: -1.5px;
+      padding: 6px 14px;
+      border-radius: 40px;
       margin-bottom: 24px;
+    }
+    .hero-eyebrow::before {
+      content: '';
+      width: 6px; height: 6px;
+      background: var(--green-accent);
+      border-radius: 50%;
+      animation: blink 2s infinite;
+    }
+    @keyframes blink { 0%,100%{opacity:1}50%{opacity:.3} }
+    .hero h1 {
+      font-size: clamp(2.4rem, 5vw, 4rem);
+      font-weight: 800;
+      color: #fff;
+      line-height: 1.1;
+      letter-spacing: -1px;
+      margin-bottom: 20px;
     }
     .hero h1 em {
       font-style: normal;
-      color: var(--gold-light);
+      color: var(--sun);
       position: relative;
     }
-    .hero h1 em::after {
-      content: '';
-      position: absolute;
-      left: 0;
-      right: 0;
-      bottom: 4px;
-      height: 3px;
-      background: var(--gold);
-      opacity: .4;
-      border-radius: 2px;
-    }
-
     .hero-desc {
+      color: rgba(255,255,255,.7);
       font-size: 1.05rem;
-      color: rgba(255,255,255,.62);
-      line-height: 1.8;
+      line-height: 1.7;
       max-width: 480px;
-      margin-bottom: 40px;
-      font-weight: 300;
+      margin-bottom: 36px;
     }
-
     .hero-btns {
       display: flex;
-      gap: 16px;
+      gap: 14px;
       flex-wrap: wrap;
-      margin-bottom: 56px;
     }
-    .btn-gold {
-      background: var(--gold);
-      color: var(--forest);
-      padding: 15px 34px;
-      border-radius: 4px;
+    .btn-primary {
+      background: var(--sun);
+      color: var(--charcoal);
+      padding: 14px 32px;
+      border-radius: 10px;
       font-weight: 700;
-      font-size: .9rem;
+      font-size: .95rem;
       text-decoration: none;
-      letter-spacing: .8px;
-      text-transform: uppercase;
-      transition: all .25s;
-      display: inline-flex;
-      align-items: center;
-      gap: 10px;
       border: none;
       cursor: pointer;
-    }
-    .btn-gold:hover {
-      background: var(--gold-light);
-      transform: translateY(-2px);
-      box-shadow: 0 12px 32px rgba(200,144,42,.3);
-    }
-    .btn-ghost {
-      background: transparent;
-      color: rgba(255,255,255,.8);
-      padding: 15px 34px;
-      border-radius: 4px;
-      font-weight: 500;
-      font-size: .9rem;
-      text-decoration: none;
-      letter-spacing: .4px;
-      border: 1px solid rgba(255,255,255,.2);
       transition: all .25s;
       display: inline-flex;
       align-items: center;
-      gap: 10px;
+      gap: 8px;
     }
-    .btn-ghost:hover {
-      border-color: rgba(255,255,255,.5);
+    .btn-primary:hover { background: var(--sun-light); transform: translateY(-2px); box-shadow: 0 8px 24px rgba(245,166,35,.4); }
+    .btn-outline {
+      background: transparent;
       color: #fff;
+      padding: 14px 32px;
+      border-radius: 10px;
+      font-weight: 600;
+      font-size: .95rem;
+      text-decoration: none;
+      border: 1.5px solid rgba(255,255,255,.4);
+      cursor: pointer;
+      transition: all .25s;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
     }
+    .btn-outline:hover { border-color: #fff; background: rgba(255,255,255,.08); }
 
-    /* Stats strip */
     .hero-stats {
-      display: flex;
-      gap: 0;
-      border-top: 1px solid rgba(255,255,255,.08);
-      padding-top: 32px;
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1px;
+      background: rgba(255,255,255,.1);
+      border-radius: 16px;
+      overflow: hidden;
+      margin-top: 48px;
     }
-    .hero-stat {
-      flex: 1;
-      padding: 0 24px 0 0;
-      border-right: 1px solid rgba(255,255,255,.08);
+    .stat-box {
+      background: rgba(255,255,255,.06);
+      padding: 24px 20px;
+      text-align: center;
+      backdrop-filter: blur(10px);
     }
-    .hero-stat:last-child { border-right: none; padding-right: 0; }
-    .hero-stat:first-child { padding-left: 0; }
     .stat-num {
-      font-family: 'Playfair Display', serif;
-      font-size: 2.4rem;
-      font-weight: 700;
-      color: var(--gold-light);
+      font-family: 'Syne', sans-serif;
+      font-size: 2rem;
+      font-weight: 800;
+      color: var(--sun);
       display: block;
-      line-height: 1;
-      margin-bottom: 6px;
     }
-    .stat-lbl {
+    .stat-label {
       font-size: .75rem;
-      color: rgba(255,255,255,.45);
-      letter-spacing: .8px;
-      text-transform: uppercase;
+      color: rgba(255,255,255,.6);
+      letter-spacing: .5px;
+      margin-top: 4px;
     }
 
-    /* Hero right panel */
-    .hero-panel {
+    /* Hero Visual Side */
+    .hero-visual {
       display: flex;
       flex-direction: column;
-      gap: 20px;
+      gap: 16px;
     }
-    .hero-feature {
-      background: rgba(255,255,255,.04);
-      border: 1px solid rgba(255,255,255,.08);
-      border-radius: 12px;
-      padding: 24px;
-      backdrop-filter: blur(16px);
+    .hero-card {
+      background: rgba(255,255,255,.06);
+      border: 1px solid rgba(255,255,255,.12);
+      border-radius: 16px;
+      padding: 20px 24px;
+      backdrop-filter: blur(12px);
+      color: #fff;
       display: flex;
-      gap: 18px;
       align-items: center;
-      transition: all .3s;
-      cursor: pointer;
+      gap: 16px;
+      animation: float 3s ease-in-out infinite;
     }
-    .hero-feature:hover {
-      background: rgba(255,255,255,.07);
-      border-color: rgba(200,144,42,.25);
-      transform: translateX(6px);
+    .hero-card:nth-child(2) { animation-delay: .5s; margin-left: 40px; }
+    .hero-card:nth-child(3) { animation-delay: 1s; }
+    @keyframes float {
+      0%,100% { transform: translateY(0); }
+      50% { transform: translateY(-8px); }
     }
-    .hero-feature:nth-child(2) { margin-left: 32px; }
-    .hf-icon {
-      width: 50px;
-      height: 50px;
-      border-radius: 10px;
+    .hero-card-icon {
+      width: 48px; height: 48px;
+      border-radius: 12px;
       display: flex;
       align-items: center;
       justify-content: center;
       flex-shrink: 0;
     }
-    .hf-icon.gold { background: rgba(200,144,42,.15); color: var(--gold-light); }
-    .hf-icon.green { background: rgba(76,175,125,.15); color: var(--forest-accent); }
-    .hf-icon.blue { background: rgba(59,130,246,.12); color: #7db8f7; }
-    .hf-title { color: #fff; font-weight: 600; font-size: .95rem; margin-bottom: 3px; }
-    .hf-sub { color: rgba(255,255,255,.45); font-size: .8rem; }
+    .icon-sun { background: rgba(245,166,35,.2); color: var(--sun); }
+    .icon-green { background: rgba(61,214,140,.2); color: var(--green-accent); }
+    .icon-blue { background: rgba(59,130,246,.2); color: #60a5fa; }
+    .hero-card-text .title { font-weight: 600; font-size: .9rem; margin-bottom: 2px; }
+    .hero-card-text .sub { font-size: .78rem; color: rgba(255,255,255,.5); }
 
-    /* ── MARQUEE STRIP ── */
-    .marquee-strip {
-      background: var(--forest);
-      padding: 16px 0;
-      overflow: hidden;
-      border-top: 1px solid rgba(200,144,42,.12);
-      border-bottom: 1px solid rgba(200,144,42,.12);
-    }
-    .marquee-track {
-      display: flex;
-      gap: 60px;
-      animation: marquee 22s linear infinite;
-      white-space: nowrap;
-    }
-    @keyframes marquee {
-      0% { transform: translateX(0); }
-      100% { transform: translateX(-50%); }
-    }
-    .marquee-item {
-      display: flex;
-      align-items: center;
-      gap: 12px;
-      color: rgba(255,255,255,.5);
-      font-size: .8rem;
-      font-weight: 500;
+    /* ── ABOUT ───────────────────────────────── */
+    .section { padding: 96px 24px; }
+    .section-inner { max-width: 1240px; margin: auto; }
+    .section-label {
+      font-size: .75rem;
+      font-weight: 700;
       letter-spacing: 1.5px;
       text-transform: uppercase;
-      flex-shrink: 0;
+      color: var(--green-bright);
+      margin-bottom: 12px;
     }
-    .marquee-dot {
-      width: 5px;
-      height: 5px;
-      border-radius: 50%;
-      background: var(--gold);
-      flex-shrink: 0;
-    }
-
-    /* ── ABOUT ── */
-    .section { padding: 110px 32px; }
-    .section-inner { max-width: 1280px; margin: auto; }
-
-    .section-eyebrow {
-      display: flex;
-      align-items: center;
-      gap: 14px;
-      margin-bottom: 16px;
-    }
-    .eyebrow-line { width: 32px; height: 1.5px; background: var(--gold); }
-    .eyebrow-text {
-      font-size: .72rem;
-      font-weight: 600;
-      letter-spacing: 2.5px;
-      text-transform: uppercase;
-      color: var(--forest-bright);
-    }
-
     .section-title {
-      font-size: clamp(2rem, 3.5vw, 3.2rem);
-      font-weight: 900;
-      color: var(--forest);
-      line-height: 1.1;
-      letter-spacing: -1px;
+      font-size: clamp(1.8rem, 3.5vw, 2.8rem);
+      font-weight: 800;
+      color: var(--green-deep);
+      line-height: 1.15;
+      letter-spacing: -.5px;
       margin-bottom: 20px;
     }
     .section-body {
       font-size: 1rem;
-      color: var(--muted);
-      line-height: 1.85;
-      max-width: 560px;
-      font-weight: 300;
+      color: var(--text-soft);
+      line-height: 1.8;
+      max-width: 600px;
     }
 
     .about-grid {
       display: grid;
       grid-template-columns: 1fr 1fr;
-      gap: 80px;
+      gap: 72px;
       align-items: center;
     }
     .about-img-wrap {
       position: relative;
     }
-    .about-img-frame {
-      position: absolute;
-      top: -20px;
-      left: -20px;
-      right: 20px;
-      bottom: 20px;
-      border: 1.5px solid rgba(200,144,42,.25);
-      border-radius: 20px;
-      z-index: 0;
-    }
     .about-img-wrap img {
-      position: relative;
-      z-index: 1;
       width: 100%;
-      height: 440px;
-      object-fit: cover;
-      border-radius: 16px;
+      border-radius: 20px;
       display: block;
+      object-fit: cover;
+      height: 400px;
     }
     .about-badge {
       position: absolute;
-      bottom: -24px;
-      right: -24px;
-      z-index: 2;
-      background: var(--forest);
-      border-radius: 12px;
-      padding: 22px 28px;
+      bottom: -20px;
+      right: -20px;
+      background: var(--green-deep);
+      color: #fff;
+      border-radius: 16px;
+      padding: 20px 24px;
       text-align: center;
-      box-shadow: 0 20px 60px rgba(13,59,38,.4);
+      box-shadow: 0 12px 40px rgba(10,77,46,.35);
     }
     .about-badge .num {
-      font-family: 'Playfair Display', serif;
-      font-size: 2.4rem;
-      font-weight: 700;
-      color: var(--gold-light);
+      font-family: 'Syne', sans-serif;
+      font-size: 2.2rem;
+      font-weight: 800;
+      color: var(--sun);
       display: block;
-      line-height: 1;
     }
-    .about-badge .txt {
-      font-size: .72rem;
-      color: rgba(255,255,255,.5);
-      letter-spacing: .8px;
-      text-transform: uppercase;
-      margin-top: 6px;
-    }
+    .about-badge .txt { font-size: .75rem; color: rgba(255,255,255,.7); letter-spacing: .5px; }
 
-    .vision-card {
-      background: var(--forest);
-      border-radius: 14px;
-      padding: 32px;
-      margin-top: 36px;
-      position: relative;
-      overflow: hidden;
+    .vision-block {
+      background: linear-gradient(135deg, var(--green-deep), var(--green-mid));
+      border-radius: 16px;
+      padding: 28px;
+      color: #fff;
+      margin-top: 32px;
     }
-    .vision-card::before {
-      content: '"';
-      position: absolute;
-      top: -10px;
-      left: 24px;
-      font-family: 'Playfair Display', serif;
-      font-size: 8rem;
-      color: rgba(200,144,42,.1);
-      line-height: 1;
-      pointer-events: none;
+    .vision-block h3 {
+      font-size: 1.2rem;
+      font-weight: 700;
+      color: var(--sun);
+      margin-bottom: 10px;
     }
-    .vision-card h3 {
-      font-size: 1.1rem;
-      color: var(--gold-light);
-      margin-bottom: 12px;
-      font-family: 'Outfit', sans-serif;
-      font-weight: 600;
-      letter-spacing: .5px;
-    }
-    .vision-card p {
-      color: rgba(255,255,255,.7);
-      font-size: .93rem;
-      line-height: 1.8;
-      font-weight: 300;
-    }
+    .vision-block p { color: rgba(255,255,255,.8); font-size: .92rem; line-height: 1.7; }
 
-    /* ── SERVICES ── */
-    .services-section {
-      background: var(--forest-mid);
-      padding: 110px 32px;
+    /* ── SERVICES / WHAT WE DO ───────────────── */
+    .services-bg {
+      background: var(--charcoal);
     }
-    .services-section .section-title { color: #fff; }
-    .services-section .section-body { color: rgba(255, 255, 255, 0.714); }
-
     .services-grid {
       display: grid;
-      grid-template-columns: repeat(2, 1fr);
-      gap: 2px;
-      margin-top: 56px;
-      border-radius: 20px;
-      overflow: hidden;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 24px;
+      margin-top: 48px;
     }
     .service-card {
-      position: relative;
-      height: 380px;
+      background: rgba(255,255,255,.04);
+      border: 1px solid rgba(255,255,255,.08);
+      border-radius: 20px;
       overflow: hidden;
+      transition: all .3s;
       cursor: pointer;
+    }
+    .service-card:hover {
+      transform: translateY(-6px);
+      border-color: rgba(61,214,140,.3);
+      box-shadow: 0 20px 48px rgba(0,0,0,.4);
     }
     .service-card img {
       width: 100%;
-      height: 100%;
+      height: 220px;
       object-fit: cover;
       display: block;
-      transition: transform .6s ease;
-      filter: brightness(.55) saturate(.8);
+      transition: transform .4s;
     }
-    .service-card:hover img {
-      transform: scale(1.06);
-      filter: brightness(.9) saturate(.6);
-    }
-    .service-overlay {
-      position: absolute;
-      inset: 0;
-      padding: 32px;
-      display: flex;
-      flex-direction: column;
-      justify-content: flex-end;
-      background: linear-gradient(to top, rgba(8,22,14,.85) 0%, transparent 60%);
-      transition: background .4s;
-    }
-    .service-card:hover .service-overlay {
-      background: linear-gradient(to top, rgba(8,22,14,.92) 0%, rgba(8,22,14,.3) 100%);
+    .service-card:hover img { transform: scale(1.05); }
+    .service-body {
+      padding: 24px;
     }
     .service-tag {
       display: inline-block;
-      background: rgba(200,144,42,.85);
-      color: var(--forest);
-      font-size: .68rem;
+      background: rgba(61,214,140,.12);
+      color: var(--green-accent);
+      font-size: .7rem;
       font-weight: 700;
-      letter-spacing: 1.5px;
+      letter-spacing: 1px;
       text-transform: uppercase;
-      padding: 5px 12px;
+      padding: 4px 10px;
       border-radius: 4px;
       margin-bottom: 12px;
-      width: fit-content;
     }
-    .service-card h3 {
-      font-size: 1.5rem;
-      font-weight: 900;
+    .service-body h3 {
+      font-size: 1.2rem;
+      font-weight: 700;
       color: #fff;
-      margin-bottom: 8px;
+      margin-bottom: 10px;
     }
-    .service-card p {
-      font-size: .85rem;
-      color: rgba(255,255,255,.6);
-      line-height: 1.6;
-      max-height: 0;
-      overflow: hidden;
-      transition: max-height .4s ease, opacity .4s;
-      opacity: 0;
-      font-weight: 300;
-    }
-    .service-card:hover p {
-      max-height: 80px;
-      opacity: 1;
+    .service-body p {
+      font-size: .88rem;
+      color: rgba(255,255,255,.55);
+      line-height: 1.7;
     }
     .service-link {
       display: inline-flex;
       align-items: center;
-      gap: 8px;
-      color: var(--gold-light);
-      font-size: .83rem;
+      gap: 6px;
+      color: var(--sun);
+      font-size: .85rem;
       font-weight: 600;
       text-decoration: none;
-      margin-top: 14px;
-      letter-spacing: .5px;
-      opacity: 0;
-      transform: translateY(8px);
-      transition: opacity .3s, transform .3s;
+      margin-top: 16px;
+      transition: gap .2s;
     }
-    .service-card:hover .service-link {
-      opacity: 1;
-      transform: translateY(0);
+    .service-link:hover { gap: 10px; }
+
+    /* ── WHY SOLAR ───────────────────────────── */
+    .why-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 32px;
+      margin-top: 48px;
     }
-
-    /* Large service card */
-    .service-card.large {
-      grid-column: span 2;
-      height: 260px;
-    }
-
-    /* ── WHY SOLAR ── */
-    .why-section { background: var(--cream); }
- .why-layout {
-    display: grid;
-    grid-template-columns: 1.1fr 0.9fr;
-    gap: 60px;
-    align-items: center;
-}
-
-.why-grid {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 16px;
-}
-    .why-card {
-      background: var(--warm-white);
+    .why-item {
+      background: #fff;
       border: 1px solid var(--border);
-      border-radius: 14px;
-      padding: 24px;
+      border-radius: 16px;
+      padding: 28px;
+      display: flex;
+      gap: 20px;
+      align-items: flex-start;
       transition: all .3s;
-      position: relative;
-      overflow: hidden;
     }
-    .why-card::before {
-      content: '';
-      position: absolute;
-      left: 0;
-      top: 0;
-      bottom: 0;
-      width: 3px;
-      background: var(--gold);
-      transform: scaleY(0);
-      transition: transform .3s;
-      border-radius: 3px 0 0 3px;
-    }
-    .why-card:hover {
-      border-color: transparent;
-      box-shadow: 0 8px 40px rgba(13,59,38,.1);
+    .why-item:hover {
+      border-color: var(--green-bright);
+      box-shadow: 0 8px 32px rgba(37,162,68,.1);
       transform: translateY(-3px);
     }
-    .why-card:hover::before { transform: scaleY(1); }
     .why-icon {
-      width: 44px;
-      height: 44px;
-      border-radius: 10px;
-      background: var(--gold-pale);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      color: var(--gold);
-      margin-bottom: 16px;
-    }
-    .why-card h3 {
-      font-size: .95rem;
-      font-weight: 600;
-      color: var(--forest);
-      margin-bottom: 8px;
-      font-family: 'Outfit', sans-serif;
-    }
-    .why-card p {
-      font-size: .83rem;
-      color: var(--muted);
-      line-height: 1.65;
-      font-weight: 300;
-    }
-
-    /* Feature list */
-    .feature-list {
-      list-style: none;
-      margin-top: 32px;
-      display: flex;
-      flex-direction: column;
-      gap: 16px;
-    }
-    .feature-list li {
-      display: flex;
-      align-items: flex-start;
-      gap: 14px;
-      font-size: .93rem;
-      color: var(--muted);
-      line-height: 1.6;
-      font-weight: 300;
-    }
-    .feature-check {
-      width: 22px;
-      height: 22px;
-      border-radius: 50%;
-      background: var(--gold-pale);
-      border: 1px solid var(--gold);
+      width: 52px; height: 52px;
+      border-radius: 14px;
+      background: linear-gradient(135deg, var(--green-deep), var(--green-bright));
       display: flex;
       align-items: center;
       justify-content: center;
       flex-shrink: 0;
-      margin-top: 2px;
-    }
-    .feature-check svg { color: var(--gold); }
-
-    /* ── CTA BAND ── */
-    .cta-band {
-      background: var(--forest);
-      padding: 0;
-      overflow: hidden;
-      position: relative;
-    }
-  .cta-band-inner {
-    max-width: 1280px;
-    margin: auto;
-    padding: 60px 20px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    position: relative;
-    z-index: 2;
-}
-    .cta-band::before {
-      content: '';
-      position: absolute;
-      right: 0;
-      top: 0;
-      bottom: 0;
-      width: 40%;
-      background: linear-gradient(90deg, transparent, rgba(200,144,42,.06));
-      pointer-events: none;
-    }
-    .cta-decor {
-      position: absolute;
-      right: 80px;
-      top: 50%;
-      transform: translateY(-50%);
-      width: 200px;
-      height: 200px;
-      border: 1px solid rgba(200,144,42,.1);
-      border-radius: 50%;
-    }
-    .cta-decor {
-    position: absolute;
-    right: -50px; /* Shifted so it doesn't cause overflow */
-    top: 50%;
-    transform: translateY(-50%);
-    opacity: 0.3;
-    pointer-events: none;
-}
-    .cta-label {
-      font-size: .72rem;
-      font-weight: 600;
-      letter-spacing: 2.5px;
-      text-transform: uppercase;
-      color: var(--gold);
-      margin-bottom: 12px;
-    }
-    .cta-band h2 {
-      font-size: clamp(1.6rem, 2.8vw, 2.4rem);
-      font-weight: 900;
       color: #fff;
-      line-height: 1.2;
     }
-    .cta-band h2 em {
-      font-style: normal;
-      color: var(--gold-light);
+    .why-text h3 {
+      font-size: 1rem;
+      font-weight: 700;
+      color: var(--green-deep);
+      margin-bottom: 8px;
     }
+    .why-text p { font-size: .88rem; color: var(--text-soft); line-height: 1.6; }
 
-    /* ── FOOTER ── */
-    footer {
-      background: var(--midnight);
-      color: rgb(255, 255, 255);
+    /* ── CTA BAND ────────────────────────────── */
+    .cta-band {
+      background: linear-gradient(135deg, var(--sun) 0%, #e8880a 100%);
+      padding: 64px 24px;
     }
-    .footer-top {
-      max-width: 1280px;
+    .cta-inner {
+      max-width: 1240px;
       margin: auto;
-      padding: 80px 32px 56px;
-      display: grid;
-      grid-template-columns: 2.2fr 1fr 1fr 1.6fr;
-      gap: 56px;
-    }
-    .footer-brand .logo { margin-bottom: 18px; }
-    .footer-brand p {
-      font-size: .87rem;
-      line-height: 1.75;
-      color: rgb(255, 255, 255);
-      max-width: 290px;
-      font-weight: 300;
-    }
-    .footer-social {
-      display: flex;
-      gap: 10px;
-      margin-top: 24px;
-    }
-    .footer-social a {
-      width: 36px;
-      height: 36px;
-      border-radius: 8px;
-      border: 1px solid rgba(255, 255, 255, 0.155);
       display: flex;
       align-items: center;
-      justify-content: center;
-      color: rgb(255, 255, 255);
+      justify-content: space-between;
+      gap: 32px;
+      flex-wrap: wrap;
+    }
+    .cta-inner h2 {
+      font-size: clamp(1.6rem, 3vw, 2.2rem);
+      font-weight: 800;
+      color: var(--charcoal);
+      max-width: 500px;
+    }
+    .btn-dark {
+      background: var(--charcoal);
+      color: #fff;
+      padding: 16px 36px;
+      border-radius: 10px;
+      font-weight: 700;
+      font-size: .95rem;
+      text-decoration: none;
+      border: none;
+      cursor: pointer;
+      transition: all .25s;
+      white-space: nowrap;
+    }
+    .btn-dark:hover { background: var(--green-deep); transform: translateY(-2px); }
+
+    /* ── FOOTER ──────────────────────────────── */
+    footer {
+      background: var(--charcoal);
+      color: rgba(255,255,255,.7);
+    }
+    .footer-top {
+      max-width: 1240px;
+      margin: auto;
+      padding: 72px 24px 48px;
+      display: grid;
+      grid-template-columns: 2fr 1fr 1fr 1.5fr;
+      gap: 48px;
+    }
+    .footer-brand .logo { margin-bottom: 16px; }
+    .footer-brand p { font-size: .88rem; line-height: 1.7; color: rgba(255,255,255,.55); max-width: 280px; }
+    .footer-social { display: flex; gap: 12px; margin-top: 20px; }
+    .footer-social a {
+      width: 38px; height: 38px;
+      border-radius: 10px;
+      border: 1px solid rgba(255,255,255,.12);
+      display: flex; align-items: center; justify-content: center;
+      color: rgba(255,255,255,.6);
       text-decoration: none;
       transition: all .2s;
     }
-    .footer-social a:hover {
-      background: var(--gold);
-      border-color: var(--gold);
-      color: var(--forest);
-    }
+    .footer-social a:hover { background: var(--green-bright); border-color: var(--green-bright); color: #fff; }
+
     .footer-col h4 {
-      font-size: .72rem;
+      font-size: .85rem;
       font-weight: 700;
-      letter-spacing: 2px;
+      letter-spacing: .8px;
       text-transform: uppercase;
-      color: rgba(255,255,255,.9);
-      margin-bottom: 22px;
+      color: #fff;
+      margin-bottom: 20px;
     }
     .footer-col ul { list-style: none; }
-    .footer-col ul li { margin-bottom: 12px; }
+    .footer-col ul li { margin-bottom: 10px; }
     .footer-col ul li a {
-      color: rgb(255, 255, 255);
+      color: rgba(255,255,255,.5);
       text-decoration: none;
-      font-size: .87rem;
-      font-weight: 300;
+      font-size: .88rem;
       transition: color .2s;
     }
-    .footer-col ul li a:hover { color: var(--gold-light); }
-    .footer-contact-row {
+    .footer-col ul li a:hover { color: var(--sun); }
+
+    .footer-contact-item {
       display: flex;
       gap: 10px;
-      margin-bottom: 16px;
-      font-size: .87rem;
+      margin-bottom: 14px;
+      font-size: .88rem;
       align-items: flex-start;
-      font-weight: 300;
     }
-    .footer-contact-row svg { color: var(--gold); flex-shrink: 0; margin-top: 2px; }
-    .footer-divider {
-      border: none;
-      border-top: 1px solid rgb(255, 255, 255);
-      max-width: 1280px;
-      margin: 0 auto;
-    }
+    .footer-contact-item svg { color: var(--green-accent); flex-shrink: 0; margin-top: 2px; }
+
     .footer-bottom {
-      max-width: 1280px;
+      border-top: 1px solid rgba(255,255,255,.08);
+      max-width: 1240px;
       margin: auto;
-      padding: 20px 32px;
+      padding: 20px 24px;
       display: flex;
       justify-content: space-between;
       align-items: center;
       flex-wrap: wrap;
       gap: 12px;
     }
-    .footer-bottom p {
-      font-size: .78rem;
-      color: rgb(255, 255, 255);
-    }
+    .footer-bottom p { font-size: .8rem; color: rgba(255,255,255,.35); }
+    .footer-bottom .made { display: flex; align-items: center; gap: 6px; }
 
-    /* ── RESPONSIVE ── */
+    /* ── RESPONSIVE ──────────────────────────── */
     @media (max-width: 1024px) {
-      .hero-content { grid-template-columns: 1fr; gap: 48px; }
-      .hero-panel { display: none; }
       .footer-top { grid-template-columns: 1fr 1fr; }
-      .about-grid { grid-template-columns: 1fr; }
+      .hero-content { grid-template-columns: 1fr; gap: 48px; }
+      .hero-visual { display: none; }
+      .hero { min-height: auto; }
+      .hero-stats { margin-top: 40px; }
     }
-    @media (max-width: 992px) {
-    .why-layout {
-        grid-template-columns: 1fr;
-        gap: 40px;
-    }
-}
-@media (max-width: 580px) {
-    .why-grid {
-        grid-template-columns: 1fr; /* Stack cards on mobile */
-    }
-    .section-title {
-        font-size: 2rem; /* Reduce font size for small phones */
-    }
-}
+
     @media (max-width: 768px) {
-  .topbar-inner { justify-content: center; }
-  .header-top {
-    display: flex;
-    justify-content: space-between; /* Logo on left, Hamburg on right */
-    align-items: center;
-    flex-wrap: nowrap; /* Prevents logo and button from stacking */
-    .cta-band-inner {
-        flex-direction: column;
-        text-align: center;
-        gap: 30px;
+      .topbar-inner { justify-content: center; }
+      .header-contact { display: none; }
+      .nav-links { display: none; flex-direction: column; width: 100%; padding-bottom: 8px; }
+      .nav-links.open { display: flex; }
+      .nav-links a { padding: 12px 20px; border-bottom: 1px solid rgba(255,255,255,.06); border-left: none; border-right: none; }
+      .nav-links a:hover { border-left: 3px solid var(--sun); }
+      .hamburger { display: flex; }
+      .nav-inner { flex-wrap: wrap; padding: 0 24px; }
+      .about-grid { grid-template-columns: 1fr; }
+      .about-img-wrap img { height: 280px; }
+      .about-badge { right: 0; bottom: -16px; }
+      .why-grid { grid-template-columns: 1fr; }
+      .footer-top { grid-template-columns: 1fr; }
+      .cta-inner { justify-content: center; text-align: center; }
+      .hero-stats { grid-template-columns: 1fr; }
+      .footer-bottom { justify-content: center; text-align: center; }
+      .services-grid { grid-template-columns: 1fr; }
     }
-    .cta-band h2 {
-        font-size: 1.8rem;
-    }
-    /* Hide decorative circles if they cause issues on tiny screens */
-    .cta-decor {
-        display: none;
-    }
-  }
-/* ── FOOTER RESPONSIVE ── */
-.footer-top {
-    max-width: 1280px;
-    margin: auto;
-    padding: 60px 20px;
-    display: grid;
-    grid-template-columns: 1.5fr 0.8fr 0.8fr 1fr;
-    gap: 40px;
-}
-  .header-contact { display: none; }
-  .nav-links {
-    display: none;
-    flex-direction: column;
-    width: 100%;
-    position: absolute;
-    top: 100%; /* Sits exactly under the white header */
-    left: 0;
-    background: var(--midnight);
-    z-index: 1000;
-  }
-
-  .nav-links.open { display: flex; }
-  .nav-links a {
-    padding: 18px 25px;
-    border-bottom: 1px solid rgba(255,255,255,.05);
-  }
-  .nav-links a::after { display: none; }
-  .hamburger { display: flex; }
-  .nav-inner { flex-wrap: wrap; } /* allow wrapping only in mobile mode */
-}
-@media (max-width: 992px) {
-    .footer-top {
-        grid-template-columns: 1fr 1fr; /* 2x2 grid on tablets */
-    }
-}
-
-@media (max-width: 580px) {
-    .footer-top {
-        grid-template-columns: 1fr; /* Single column on phones */
-        text-align: center;
-    }
-    
-    .footer-brand {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-    }
-    
-    .footer-brand p {
-        margin: auto;
-    }
-
-    .footer-social {
-        justify-content: center;
-    }
-
-    .footer-contact-row {
-        justify-content: center;
-        text-align: center;
-    }
-    
-    .footer-bottom {
-        flex-direction: column;
-        text-align: center;
-        padding: 20px;
-    }
-}
-
-/* ── UNIVERSAL OVERFLOW FIX ── */
-.section, .cta-band, footer {
-    width: 100%;
-    overflow: hidden; /* Encapsulates any inner absolute items */
-}
   </style>
 </head>
 <body>
 
-<!-- TOPBAR -->
+<!-- TOP BAR -->
 <div class="topbar">
   <div class="topbar-inner">
-    <div class="topbar-left">
-      <svg width="13" height="13" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 11c1.657 0 3-1.343 3-3S13.657 5 12 5s-3 1.343-3 3 1.343 3 3 3z"/><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 22s8-4.5 8-11a8 8 0 10-16 0c0 6.5 8 11 8 11z"/></svg>
-      5 Talabi Street, off Adeniyi Jones Ave, Ikeja, Lagos, Nigeria
+    <div class="topbar-loc">
+      <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 11c1.657 0 3-1.343 3-3S13.657 5 12 5s-3 1.343-3 3 1.343 3 3 3z"/><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 22s8-4.5 8-11a8 8 0 10-16 0c0 6.5 8 11 8 11z"/></svg>
+      5 Talabi Street, off Adeniyi Jones Avenue, Ikeja, Lagos, Nigeria
     </div>
     <div class="topbar-social">
       <a href="#" aria-label="Facebook"><svg width="14" height="14" fill="currentColor" viewBox="0 0 24 24"><path d="M22 12c0-5.523-4.477-10-10-10S2 6.477 2 12c0 4.991 3.657 9.128 8.438 9.878v-6.988h-2.54v-2.89h2.54V9.845c0-2.507 1.492-3.89 3.777-3.89 1.094 0 2.238.195 2.238.195v2.46h-1.26c-1.243 0-1.63.771-1.63 1.562v1.875h2.773l-.443 2.89h-2.33v6.988C18.343 21.128 22 16.991 22 12z"/></svg></a>
@@ -1129,40 +730,25 @@
   </div>
 </div>
 
-<!-- HEADER -->
+<!-- MAIN HEADER -->
 <header class="main-header">
   <div class="header-inner">
     <div class="header-top">
       <a href="#" class="logo">
-        <!-- SVG logo emblem -->
-        <svg class="logo-emblem" viewBox="0 0 54 54" fill="none" xmlns="http://www.w3.org/2000/svg">
-          <rect width="54" height="54" rx="14" fill="#0D3B26"/>
-          <!-- Sun rays -->
-          <circle cx="27" cy="22" r="7" fill="#C8902A"/>
-          <line x1="27" y1="11" x2="27" y2="8" stroke="#F0B93A" stroke-width="2" stroke-linecap="round"/>
-          <line x1="27" y1="36" x2="27" y2="33" stroke="#F0B93A" stroke-width="2" stroke-linecap="round"/>
-          <line x1="16" y1="22" x2="13" y2="22" stroke="#F0B93A" stroke-width="2" stroke-linecap="round"/>
-          <line x1="41" y1="22" x2="38" y2="22" stroke="#F0B93A" stroke-width="2" stroke-linecap="round"/>
-          <line x1="18.9" y1="14.9" x2="16.8" y2="12.8" stroke="#F0B93A" stroke-width="2" stroke-linecap="round"/>
-          <line x1="37.2" y1="31.2" x2="35.1" y2="29.1" stroke="#F0B93A" stroke-width="2" stroke-linecap="round"/>
-          <line x1="35.1" y1="14.9" x2="37.2" y2="12.8" stroke="#F0B93A" stroke-width="2" stroke-linecap="round"/>
-          <line x1="18.9" y1="29.1" x2="16.8" y2="31.2" stroke="#F0B93A" stroke-width="2" stroke-linecap="round"/>
-          <!-- F letter -->
-          <text x="18" y="48" font-family="Georgia, serif" font-size="15" font-weight="700" fill="#F0B93A">Solar</text>
-        </svg>
+        <div class="logo-mark">R</div>
         <div class="logo-text">
-          <div class="brand-top">Flemtech</div>
-          <div class="brand-sub">Power &amp; Solar</div>
+          <div class="power">FLEMTEC POWER</div>
+          <div class="solar">FLEMTEC SOLAR</div>
         </div>
       </a>
       <div class="header-contact">
         <div class="contact-item">
-          <div class="lbl">Sales & Support</div>
-          <div class="val">+234 708 705 4296 &nbsp;·&nbsp; +234 813 723 9782</div>
+          <div class="label">Customer Support & Sales</div>
+          <div class="value">+234 708 705 4296 &nbsp;·&nbsp; +234 813 723 9782</div>
         </div>
         <div class="contact-item">
-          <div class="lbl">Opening Hours</div>
-          <div class="val">Mon – Fri &nbsp;·&nbsp; 08:00 – 17:00</div>
+          <div class="label">Opening Times</div>
+          <div class="value">Mon – Fri &nbsp; 08:00 – 17:00</div>
         </div>
       </div>
        <button class="hamburger" id="menuBtn" aria-label="Toggle menu">
@@ -1174,140 +760,110 @@
     <div class="nav-inner">
       <ul class="nav-links" id="navLinks">
         <li><a href="#" class="active">Home</a></li>
-        <li><a href="#about">About</a></li>
+        <li><a href="#about">About Us</a></li>
         <li><a href="#services">Projects</a></li>
         <li><a href="#">Academy</a></li>
-        <li><a href="#services">Services</a></li>
+        <li><a href="#services">Products &amp; Services</a></li>
         <li><a href="#">FAQs</a></li>
         <li><a href="#">Blog</a></li>
         <li><a href="#contact">Contact</a></li>
         <li><a href="#contact" class="nav-cta">Get a Quote</a></li>
       </ul>
-        </div>
+      
+    </div>
   </nav>
 </header>
 
 <!-- HERO -->
 <section class="hero">
   <div class="hero-bg"></div>
-  <div class="hero-grain"></div>
-  <div class="hero-arc"></div>
-  <div class="hero-glow"></div>
+  <div class="hero-sun"></div>
+  <div class="hero-grid-overlay"></div>
 
   <div class="hero-content">
     <div>
-      <div class="hero-badge">
-        <div class="hero-badge-line"></div>
-        <div class="hero-badge-text">Nigeria's Renewable Energy Leaders</div>
-      </div>
+      <div class="hero-eyebrow">Nigeria's Renewable Energy Leaders</div>
       <h1>Power Your World<br>With <em>Clean Solar</em><br>Energy</h1>
-      <p class="hero-desc">Flemtech delivers world-class solar, inverter, and renewable energy systems — bringing reliable, eco-friendly power to homes and communities across Africa.</p>
+      <p class="hero-desc">FLEMTEC delivers world-class solar, inverter, and renewable energy systems — bringing reliable, eco-friendly power to homes and communities across Africa.</p>
       <div class="hero-btns">
-        <a href="#services" class="btn-gold">
+        <a href="#services" class="btn-primary">
           <svg width="16" height="16" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"/></svg>
           Explore Solutions
         </a>
-        <a href="#about" class="btn-ghost">
+        <a href="#about" class="btn-outline">
           <svg width="16" height="16" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14.752 11.168l-3.197-2.132A1 1 0 0010 9.87v4.263a1 1 0 001.555.832l3.197-2.132a1 1 0 000-1.664z"/><circle cx="12" cy="12" r="10" stroke-width="2"/></svg>
-          Our Story
+          Watch Story
         </a>
       </div>
 
       <div class="hero-stats">
-        <div class="hero-stat">
+        <div class="stat-box">
           <span class="stat-num">500+</span>
-          <span class="stat-lbl">Installations</span>
+          <span class="stat-label">Installations</span>
         </div>
-        <div class="hero-stat">
+        <div class="stat-box">
           <span class="stat-num">15+</span>
-          <span class="stat-lbl">Years Experience</span>
+          <span class="stat-label">Years Experience</span>
         </div>
-        <div class="hero-stat">
+        <div class="stat-box">
           <span class="stat-num">6</span>
-          <span class="stat-lbl">Energy Types</span>
+          <span class="stat-label">Energy Types</span>
         </div>
       </div>
     </div>
 
-    <div class="hero-panel">
-      <div class="hero-feature">
-        <div class="hf-icon gold">
-          <svg width="22" height="22" fill="none" viewBox="0 0 24 24" stroke="currentColor"><circle cx="12" cy="12" r="5" stroke-width="2"/><path stroke-linecap="round" stroke-width="2" d="M12 1v2m0 18v2m11-11h-2M3 12H1m16.95-6.95l-1.414 1.414M6.464 17.536l-1.414 1.414M17.536 17.536l1.414 1.414M6.464 6.464L5.05 5.05"/></svg>
+    <div class="hero-visual">
+      <div class="hero-card">
+        <div class="hero-card-icon icon-sun">
+          <svg width="24" height="24" fill="none" viewBox="0 0 24 24" stroke="currentColor"><circle cx="12" cy="12" r="5" stroke-width="2"/><path stroke-linecap="round" stroke-width="2" d="M12 1v2m0 18v2m11-11h-2M3 12H1m16.95-6.95l-1.414 1.414M6.464 17.536l-1.414 1.414M17.536 17.536l1.414 1.414M6.464 6.464L5.05 5.05"/></svg>
         </div>
-        <div>
-          <div class="hf-title">Solar Power Systems</div>
-          <div class="hf-sub">On-grid, Off-grid & Hybrid</div>
-        </div>
-      </div>
-      <div class="hero-feature">
-        <div class="hf-icon green">
-          <svg width="22" height="22" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 3l14 9-14 9V3z"/></svg>
-        </div>
-        <div>
-          <div class="hf-title">Mini Grid Systems</div>
-          <div class="hf-sub">Electrifying rural communities</div>
+        <div class="hero-card-text">
+          <div class="title">Solar Power Systems</div>
+          <div class="sub">On-grid, Off-grid & Hybrid</div>
         </div>
       </div>
-      <div class="hero-feature">
-        <div class="hf-icon blue">
-          <svg width="22" height="22" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"/></svg>
+      <div class="hero-card">
+        <div class="hero-card-icon icon-green">
+          <svg width="24" height="24" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 3l14 9-14 9V3z"/></svg>
         </div>
-        <div>
-          <div class="hf-title">Energy Independence</div>
-          <div class="hf-sub">Zero grid dependency</div>
+        <div class="hero-card-text">
+          <div class="title">Mini Grid Systems</div>
+          <div class="sub">Electrifying rural communities</div>
+        </div>
+      </div>
+      <div class="hero-card">
+        <div class="hero-card-icon icon-blue">
+          <svg width="24" height="24" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"/></svg>
+        </div>
+        <div class="hero-card-text">
+          <div class="title">Energy Independence</div>
+          <div class="sub">Zero grid dependency</div>
         </div>
       </div>
     </div>
   </div>
 </section>
 
-<!-- MARQUEE -->
-<div class="marquee-strip">
-  <div class="marquee-track">
-    <span class="marquee-item"><span class="marquee-dot"></span> Solar Power Systems</span>
-    <span class="marquee-item"><span class="marquee-dot"></span> Mini Grid Electrification</span>
-    <span class="marquee-item"><span class="marquee-dot"></span> Inverter Backup</span>
-    <span class="marquee-item"><span class="marquee-dot"></span> Agrosolar Farming</span>
-    <span class="marquee-item"><span class="marquee-dot"></span> Wind Energy</span>
-    <span class="marquee-item"><span class="marquee-dot"></span> Waste-to-Energy</span>
-    <span class="marquee-item"><span class="marquee-dot"></span> Small Hydro Power</span>
-    <span class="marquee-item"><span class="marquee-dot"></span> Biomass Energy</span>
-    <!-- Duplicate for seamless loop -->
-    <span class="marquee-item"><span class="marquee-dot"></span> Solar Power Systems</span>
-    <span class="marquee-item"><span class="marquee-dot"></span> Mini Grid Electrification</span>
-    <span class="marquee-item"><span class="marquee-dot"></span> Inverter Backup</span>
-    <span class="marquee-item"><span class="marquee-dot"></span> Agrosolar Farming</span>
-    <span class="marquee-item"><span class="marquee-dot"></span> Wind Energy</span>
-    <span class="marquee-item"><span class="marquee-dot"></span> Waste-to-Energy</span>
-    <span class="marquee-item"><span class="marquee-dot"></span> Small Hydro Power</span>
-    <span class="marquee-item"><span class="marquee-dot"></span> Biomass Energy</span>
-  </div>
-</div>
-
 <!-- ABOUT -->
-<section class="section why-section" id="about">
+<section class="section" id="about">
   <div class="section-inner">
     <div class="about-grid">
-      <div class="about-img-wrap">
-        <div class="about-img-frame"></div>
-        <img src="https://images.unsplash.com/photo-1509391366360-2e959784a276?w=800&q=80" alt="Solar installation" />
-        <div class="about-badge">
-          <span class="num">2009</span>
-          <span class="txt">Founded in Nigeria</span>
-        </div>
-      </div>
       <div>
-        <div class="section-eyebrow">
-          <div class="eyebrow-line"></div>
-          <div class="eyebrow-text">Who We Are</div>
-        </div>
-        <h2 class="section-title">Flemtech Africa —<br>Built for Renewable<br>Energy</h2>
-        <p class="section-body">Flemtech Nigeria Ltd. specialises in Renewable Energy — Solar and Inverter Backup Systems, Small Hydro Power, Biomass, Waste-to-Energy plants, Land-Fill Gas Plants, and Wind Energy.</p>
-        <p class="section-body" style="margin-top: 16px;">As Nigeria pursues steady, uninterrupted power, we go beyond gas plants and invest in alternative technologies — especially for the rural 60% who need it most.</p>
+        <div class="section-label">Who We Are</div>
+        <h2 class="section-title">FLEMTEC Africa —<br>Built for Renewable Energy</h2>
+        <p class="section-body">FLEMTEC Nigeria Ltd. specialises in Renewable Energy — Solar and Inverter Backup Systems, Small Hydro Power, Biomass, Waste-to-Energy plants, Land-Fill Gas Plants, and Wind Energy.</p>
+        <p class="section-body" style="margin-top:16px;">As Nigeria continues to pursue steady, uninterrupted power, we go beyond gas plants and invest in alternative technologies — especially for the rural 60% who need it most.</p>
 
-        <div class="vision-card">
+        <div class="vision-block">
           <h3>Our Vision</h3>
           <p>To be an Integrated Renewable Energy company and Independent Power Producer — delivering electric power from Renewable Energy Technologies (RETs) for the benefit of rural and urban communities across Africa.</p>
+        </div>
+      </div>
+      <div class="about-img-wrap">
+        <img src="https://i0.wp.com/www.rubitecsolar.com/wp-content/uploads/2018/07/power-solar-edited-300x200.jpg?resize=300%2C200" alt="FLEMTEC Solar installation" />
+        <div class="about-badge">
+          <span class="num">2026</span>
+          <span class="txt">Founded in Nigeria</span>
         </div>
       </div>
     </div>
@@ -1315,53 +871,54 @@
 </section>
 
 <!-- SERVICES -->
-<section class="services-section" id="services">
+<section class="section services-bg" id="services">
   <div class="section-inner">
-    <div class="section-eyebrow">
-      <div class="eyebrow-line" style="background: var(--gold)"></div>
-      <div class="eyebrow-text" style="color: rgba(255,255,255,.5)">What We Do</div>
-    </div>
-    <h2 class="section-title">Our Energy Solutions</h2>
-    <p class="section-body">From agro-solar systems to complete mini-grid deployments — we engineer the future of African energy.</p>
+    <div class="section-label" style="color:var(--green-accent)">What We Do</div>
+    <h2 class="section-title" style="color:#fff">Our Energy Solutions</h2>
+    <p class="section-body" style="color:rgba(255,255,255,.6)">From agro-solar systems to complete mini-grid deployments — we engineer the future of African energy.</p>
 
     <div class="services-grid">
+      <!-- Agrosolar -->
       <div class="service-card">
-        <img src="https://images.unsplash.com/photo-1509391366360-2e959784a276?w=700&q=80" alt="Agrosolar" />
-        <div class="service-overlay">
+        <img src="https://images.unsplash.com/photo-1509391366360-2e959784a276?w=600&q=80" alt="Agrosolar" />
+        <div class="service-body">
           <span class="service-tag">Agriculture</span>
           <h3>Agrosolar Systems</h3>
           <p>Powering agriculture with sustainable solar solutions — enabling farmers to irrigate, process, and store crops efficiently.</p>
-          <a href="#" class="service-link">Learn more →</a>
+          <a href="#" class="service-link">Learn more <svg width="14" height="14" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/></svg></a>
         </div>
       </div>
 
+      <!-- Mini Grid -->
       <div class="service-card">
-        <img src="https://images.unsplash.com/photo-1466611653911-95081537e5b7?w=700&q=80" alt="Mini Grid" />
-        <div class="service-overlay">
+        <img src="https://images.unsplash.com/photo-1466611653911-95081537e5b7?w=600&q=80" alt="Mini Grid Systems" />
+        <div class="service-body">
           <span class="service-tag">Communities</span>
           <h3>Mini Grid Systems</h3>
           <p>Electrifying rural communities with solar mini-grids — providing reliable, clean power to homes, schools, and businesses.</p>
-          <a href="#" class="service-link">Learn more →</a>
+          <a href="#" class="service-link">Learn more <svg width="14" height="14" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/></svg></a>
         </div>
       </div>
 
+      <!-- Inverter Backup -->
       <div class="service-card">
-        <img src="https://images.unsplash.com/photo-1497435334941-8c899ee9e8e9?w=700&q=80" alt="Inverter Backup" />
-        <div class="service-overlay">
+        <img src="https://images.unsplash.com/photo-1600880292203-757bb62b4baf?w=600&q=80" alt="Inverter Backup" />
+        <div class="service-body">
           <span class="service-tag">Residential</span>
           <h3>Inverter Backup Systems</h3>
           <p>Seamless power backup solutions for homes and offices — zero downtime, full energy independence.</p>
-          <a href="#" class="service-link">Learn more →</a>
+          <a href="#" class="service-link">Learn more <svg width="14" height="14" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/></svg></a>
         </div>
       </div>
 
+      <!-- Biomass / Waste to Energy -->
       <div class="service-card">
-        <img src="https://images.unsplash.com/photo-1532601224476-15c79f2f7a51?w=700&q=80" alt="Waste to Energy" />
-        <div class="service-overlay">
+        <img src="https://images.unsplash.com/photo-1532601224476-15c79f2f7a51?w=600&q=80" alt="Waste to Energy" />
+        <div class="service-body">
           <span class="service-tag">Industrial</span>
           <h3>Waste-to-Energy Plants</h3>
-          <p>Turning waste into power — biomass systems, land-fill gas plants, and wind energy for industrial use.</p>
-          <a href="#" class="service-link">Learn more →</a>
+          <p>Turning waste into power — biomass energy systems, land-fill gas plants, and wind energy for industrial use.</p>
+          <a href="#" class="service-link">Learn more <svg width="14" height="14" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/></svg></a>
         </div>
       </div>
     </div>
@@ -1369,65 +926,46 @@
 </section>
 
 <!-- WHY SOLAR -->
-<section class="section why-section">
+<section class="section">
   <div class="section-inner">
-    <div class="why-layout">
-      <div class="why-intro">
-        <div class="section-eyebrow">
-          <div class="eyebrow-line"></div>
-          <div class="eyebrow-text">The Benefits</div>
-        </div>
-        <h2 class="section-title">Why Choose Solar?</h2>
-        <p class="section-body">The sun rises over Nigeria every single day — the most abundant, freely available, and infinite energy source on the planet. We help you harness it.</p>
+    <div class="section-label">The Benefits</div>
+    <h2 class="section-title">Why Choose Solar?</h2>
 
-        <ul class="feature-list">
-          <li>
-            <span class="feature-check"><svg width="12" height="12" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 13l4 4L19 7"/></svg></span>
-            Free site assessment and personalised energy audit
-          </li>
-          <li>
-            <span class="feature-check"><svg width="12" height="12" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 13l4 4L19 7"/></svg></span>
-            Professional installation by certified engineers
-          </li>
-          <li>
-            <span class="feature-check"><svg width="12" height="12" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 13l4 4L19 7"/></svg></span>
-            12-month workmanship warranty + manufacturer guarantees
-          </li>
-          <li>
-            <span class="feature-check"><svg width="12" height="12" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 13l4 4L19 7"/></svg></span>
-            Post-installation monitoring and maintenance support
-          </li>
-        </ul>
+    <div class="why-grid">
+      <div class="why-item">
+        <div class="why-icon">
+          <svg width="22" height="22" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"/></svg>
+        </div>
+        <div class="why-text">
+          <h3>Reliable &amp; Consistent Power Supply</h3>
+          <p>Solar provides a steady, uninterrupted energy source — rain or shine, your power keeps flowing.</p>
+        </div>
       </div>
-
-      <div class="why-grid">
-        <div class="why-card">
-          <div class="why-icon">
-            <svg width="20" height="20" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"/></svg>
-          </div>
-          <h3>Reliable Power Supply</h3>
-          <p>A steady, uninterrupted energy source — rain or shine, your power keeps flowing.</p>
+      <div class="why-item">
+        <div class="why-icon">
+          <svg width="22" height="22" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
         </div>
-        <div class="why-card">
-          <div class="why-icon">
-            <svg width="20" height="20" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
-          </div>
-          <h3>Cut Electricity Costs</h3>
-          <p>Eliminate monthly bills. Your investment pays for itself and keeps saving you money.</p>
+        <div class="why-text">
+          <h3>Dramatically Cut Electricity Costs</h3>
+          <p>Eliminate monthly electricity bills. Your investment pays for itself — and then keeps saving you money year after year.</p>
         </div>
-        <div class="why-card">
-          <div class="why-icon">
-            <svg width="20" height="20" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3.055 11H5a2 2 0 012 2v1a2 2 0 002 2 2 2 0 012 2v2.945M8 3.935V5.5A2.5 2.5 0 0010.5 8h.5a2 2 0 012 2 2 2 0 104 0 2 2 0 012-2h1.064"/></svg>
-          </div>
-          <h3>Eco-Friendly Energy</h3>
-          <p>100% clean — zero CO₂, zero noise, zero contribution to global warming.</p>
+      </div>
+      <div class="why-item">
+        <div class="why-icon">
+          <svg width="22" height="22" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3.055 11H5a2 2 0 012 2v1a2 2 0 002 2 2 2 0 012 2v2.945M8 3.935V5.5A2.5 2.5 0 0010.5 8h.5a2 2 0 012 2 2 2 0 104 0 2 2 0 012-2h1.064M15 20.488V18a2 2 0 012-2h3.064"/></svg>
         </div>
-        <div class="why-card">
-          <div class="why-icon">
-            <svg width="20" height="20" fill="none" viewBox="0 0 24 24" stroke="currentColor"><circle cx="12" cy="12" r="5" stroke-width="2"/><path stroke-linecap="round" stroke-width="2" d="M12 1v2m0 18v2m11-11h-2M3 12H1"/></svg>
-          </div>
-          <h3>Free Abundant Source</h3>
-          <p>Sunlight is Nigeria's most abundant natural resource. Never pay for the fuel again.</p>
+        <div class="why-text">
+          <h3>Eco-Friendly &amp; Sustainable</h3>
+          <p>Solar is 100% clean energy — zero CO₂ emissions, zero noise pollution, zero contribution to global warming.</p>
+        </div>
+      </div>
+      <div class="why-item">
+        <div class="why-icon">
+          <svg width="22" height="22" fill="none" viewBox="0 0 24 24" stroke="currentColor"><circle cx="12" cy="12" r="5" stroke-width="2"/><path stroke-linecap="round" stroke-width="2" d="M12 1v2m0 18v2m11-11h-2M3 12H1m16.95-6.95l-1.414 1.414M6.464 17.536l-1.414 1.414M17.536 17.536l1.414 1.414M6.464 6.464L5.05 5.05"/></svg>
+        </div>
+        <div class="why-text">
+          <h3>Free &amp; Abundant Energy Source</h3>
+          <p>Sunlight is Nigeria's most abundant natural resource. Harness it — and never pay for the fuel that powers your world.</p>
         </div>
       </div>
     </div>
@@ -1435,42 +973,30 @@
 </section>
 
 <!-- CTA BAND -->
-<div class="cta-band" id="contact">
-  <div class="cta-decor"></div>
-  <div class="cta-band-inner">
-    <div>
-      <div class="cta-label">Get Started Today</div>
-      <h2>Ready to switch to <em>clean energy?</em><br>Let's design your system.</h2>
-    </div>
-    <a href="#" class="btn-gold" style="white-space: nowrap; font-size: .88rem;">Get a Free Quote →</a>
+<div class="cta-band">
+  <div class="cta-inner">
+    <h2>Ready to switch to clean energy? Let's design your system today.</h2>
+    <a href="#contact" class="btn-dark">Get a Free Quote →</a>
   </div>
 </div>
 
 <!-- FOOTER -->
-<footer>
+<footer id="contact">
   <div class="footer-top">
     <div class="footer-brand">
-      <a href="#" class="logo" style="margin-bottom: 18px; display: flex;">
-        <svg class="logo-emblem" viewBox="0 0 54 54" fill="none" xmlns="http://www.w3.org/2000/svg" style="width:44px;height:44px;">
-          <rect width="54" height="54" rx="14" fill="#0D3B26"/>
-          <circle cx="27" cy="22" r="7" fill="#C8902A"/>
-          <line x1="27" y1="11" x2="27" y2="8" stroke="#F0B93A" stroke-width="2" stroke-linecap="round"/>
-          <line x1="27" y1="36" x2="27" y2="33" stroke="#F0B93A" stroke-width="2" stroke-linecap="round"/>
-          <line x1="16" y1="22" x2="13" y2="22" stroke="#F0B93A" stroke-width="2" stroke-linecap="round"/>
-          <line x1="41" y1="22" x2="38" y2="22" stroke="#F0B93A" stroke-width="2" stroke-linecap="round"/>
-          <text x="18" y="48" font-family="Georgia, serif" font-size="15" font-weight="700" fill="#F0B93A">Solar</text>
-        </svg>
-        <div class="logo-text" style="margin-left: 12px;">
-          <div class="brand-top" style="color: #fff; font-size: 1.05rem;">Flemtech</div>
-          <div class="brand-sub">Power &amp; Solar</div>
+      <a href="#" class="logo">
+        <div class="logo-mark" style="width:44px;height:44px;font-size:1.2rem;">R</div>
+        <div class="logo-text">
+          <div class="power" style="color:#fff;font-size:.95rem;">FLEMTEC POWER</div>
+          <div class="solar" style="font-size:.82rem;">FLEMTEC SOLAR</div>
         </div>
       </a>
       <p>Nigeria's leading integrated renewable energy company — committed to powering a cleaner, brighter Africa.</p>
       <div class="footer-social">
-        <a href="#" aria-label="Facebook"><svg width="15" height="15" fill="currentColor" viewBox="0 0 24 24"><path d="M22 12c0-5.523-4.477-10-10-10S2 6.477 2 12c0 4.991 3.657 9.128 8.438 9.878v-6.988h-2.54v-2.89h2.54V9.845c0-2.507 1.492-3.89 3.777-3.89 1.094 0 2.238.195 2.238.195v2.46h-1.26c-1.243 0-1.63.771-1.63 1.562v1.875h2.773l-.443 2.89h-2.33v6.988C18.343 21.128 22 16.991 22 12z"/></svg></a>
-        <a href="#" aria-label="Instagram"><svg width="15" height="15" fill="currentColor" viewBox="0 0 24 24"><path d="M7 2C4.243 2 2 4.243 2 7v10c0 2.757 2.243 5 5 5h10c2.757 0 5-2.243 5-5V7c0-2.757-2.243-5-5-5H7zm10 2a3 3 0 013 3v10a3 3 0 01-3 3H7a3 3 0 01-3-3V7a3 3 0 013-3h10zm-5 3a5 5 0 100 10 5 5 0 000-10zm0 2a3 3 0 110 6 3 3 0 010-6zm4.5-2a1.5 1.5 0 100 3 1.5 1.5 0 000-3z"/></svg></a>
-        <a href="#" aria-label="Twitter"><svg width="15" height="15" fill="currentColor" viewBox="0 0 24 24"><path d="M23 3a10.9 10.9 0 01-3.14 1.53A4.48 4.48 0 0022.4.36a9.09 9.09 0 01-2.88 1.1A4.52 4.52 0 0016.11 0c-2.5 0-4.52 2.02-4.52 4.52 0 .35.04.7.11 1.03A12.82 12.82 0 013 1.1a4.52 4.52 0 001.4 6.04A4.48 4.48 0 012 6.6v.06c0 2.18 1.55 4 3.6 4.41a4.52 4.52 0 01-2.04.08 4.52 4.52 0 004.22 3.14A9.05 9.05 0 012 19.54a12.8 12.8 0 006.92 2.03c8.3 0 12.84-6.87 12.84-12.84 0-.2 0-.39-.01-.58A9.22 9.22 0 0023 3z"/></svg></a>
-        <a href="#" aria-label="YouTube"><svg width="15" height="15" fill="currentColor" viewBox="0 0 24 24"><path d="M23.498 6.186a2.974 2.974 0 00-2.096-2.106C19.691 3.5 12 3.5 12 3.5s-7.691 0-9.402.58a2.974 2.974 0 00-2.096 2.106A31.41 31.41 0 000 12a31.41 31.41 0 00.502 5.814 2.974 2.974 0 002.096 2.106C4.309 20.5 12 20.5 12 20.5s7.691 0 9.402-.58a2.974 2.974 0 002.096-2.106A31.41 31.41 0 0024 12a31.41 31.41 0 00-.502-5.814zM9.75 15.02V8.98l6.5 3.02-6.5 3.02z"/></svg></a>
+        <a href="#" aria-label="Facebook"><svg width="16" height="16" fill="currentColor" viewBox="0 0 24 24"><path d="M22 12c0-5.523-4.477-10-10-10S2 6.477 2 12c0 4.991 3.657 9.128 8.438 9.878v-6.988h-2.54v-2.89h2.54V9.845c0-2.507 1.492-3.89 3.777-3.89 1.094 0 2.238.195 2.238.195v2.46h-1.26c-1.243 0-1.63.771-1.63 1.562v1.875h2.773l-.443 2.89h-2.33v6.988C18.343 21.128 22 16.991 22 12z"/></svg></a>
+        <a href="#" aria-label="Instagram"><svg width="16" height="16" fill="currentColor" viewBox="0 0 24 24"><path d="M7 2C4.243 2 2 4.243 2 7v10c0 2.757 2.243 5 5 5h10c2.757 0 5-2.243 5-5V7c0-2.757-2.243-5-5-5H7zm10 2a3 3 0 013 3v10a3 3 0 01-3 3H7a3 3 0 01-3-3V7a3 3 0 013-3h10zm-5 3a5 5 0 100 10 5 5 0 000-10zm0 2a3 3 0 110 6 3 3 0 010-6zm4.5-2a1.5 1.5 0 100 3 1.5 1.5 0 000-3z"/></svg></a>
+        <a href="#" aria-label="Twitter"><svg width="16" height="16" fill="currentColor" viewBox="0 0 24 24"><path d="M23 3a10.9 10.9 0 01-3.14 1.53A4.48 4.48 0 0022.4.36a9.09 9.09 0 01-2.88 1.1A4.52 4.52 0 0016.11 0c-2.5 0-4.52 2.02-4.52 4.52 0 .35.04.7.11 1.03A12.82 12.82 0 013 1.1a4.52 4.52 0 001.4 6.04A4.48 4.48 0 012 6.6v.06c0 2.18 1.55 4 3.6 4.41a4.52 4.52 0 01-2.04.08 4.52 4.52 0 004.22 3.14A9.05 9.05 0 012 19.54a12.8 12.8 0 006.92 2.03c8.3 0 12.84-6.87 12.84-12.84 0-.2 0-.39-.01-.58A9.22 9.22 0 0023 3z"/></svg></a>
+        <a href="#" aria-label="YouTube"><svg width="16" height="16" fill="currentColor" viewBox="0 0 24 24"><path d="M23.498 6.186a2.974 2.974 0 00-2.096-2.106C19.691 3.5 12 3.5 12 3.5s-7.691 0-9.402.58a2.974 2.974 0 00-2.096 2.106A31.41 31.41 0 000 12a31.41 31.41 0 00.502 5.814 2.974 2.974 0 002.096 2.106C4.309 20.5 12 20.5 12 20.5s7.691 0 9.402-.58a2.974 2.974 0 002.096-2.106A31.41 31.41 0 0024 12a31.41 31.41 0 00-.502-5.814zM9.75 15.02V8.98l6.5 3.02-6.5 3.02z"/></svg></a>
       </div>
     </div>
 
@@ -1479,7 +1005,7 @@
       <ul>
         <li><a href="#">About Us</a></li>
         <li><a href="#">Our Projects</a></li>
-        <li><a href="#">Flemtech Academy</a></li>
+        <li><a href="#">FLEMTEC Academy</a></li>
         <li><a href="#">Blog</a></li>
         <li><a href="#">Careers</a></li>
       </ul>
@@ -1498,25 +1024,24 @@
 
     <div class="footer-col">
       <h4>Get in Touch</h4>
-      <div class="footer-contact-row">
-        <svg width="15" height="15" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"/><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"/></svg>
+      <div class="footer-contact-item">
+        <svg width="16" height="16" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"/><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"/></svg>
         <span>5 Talabi Street, off Adeniyi Jones Ave, Ikeja, Lagos</span>
       </div>
-      <div class="footer-contact-row">
-        <svg width="15" height="15" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"/></svg>
-        <span>+234 708 705 4296<br>+234 813 723 9782</span>
+      <div class="footer-contact-item">
+        <svg width="16" height="16" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"/></svg>
+        <span>+234 708 705 4926<br>+234 812 732 3972</span>
       </div>
-      <div class="footer-contact-row">
-        <svg width="15" height="15" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/></svg>
-        <span>info@flemtechsolar.com</span>
+      <div class="footer-contact-item">
+        <svg width="16" height="16" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/></svg>
+        <span>info@FLEMTECsolar.com</span>
       </div>
     </div>
   </div>
 
-  <hr class="footer-divider">
   <div class="footer-bottom">
-    <p>© 2026 Flemtech Solar & Power — All Rights Reserved.</p>
-    <p>Built with renewable intent ♻</p>
+    <p>© 2025 FLEMTEC Solar & Power — All Rights Reserved.</p>
+    <p class="made">Built with ♻️ renewable intent</p>
   </div>
 </footer>
 
