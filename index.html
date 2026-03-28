@@ -745,18 +745,18 @@
 
     /* ── WHY SOLAR ── */
     .why-section { background: var(--cream); }
-    .why-layout {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 80px;
-      align-items: center;
-    }
-    .why-intro { }
-    .why-grid {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 16px;
-    }
+ .why-layout {
+    display: grid;
+    grid-template-columns: 1.1fr 0.9fr;
+    gap: 60px;
+    align-items: center;
+}
+
+.why-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 16px;
+}
     .why-card {
       background: var(--warm-white);
       border: 1px solid var(--border);
@@ -847,15 +847,16 @@
       overflow: hidden;
       position: relative;
     }
-    .cta-band-inner {
-      max-width: 1280px;
-      margin: auto;
-      padding: 72px 32px;
-      display: grid;
-      grid-template-columns: 1fr auto;
-      align-items: center;
-      gap: 48px;
-    }
+  .cta-band-inner {
+    max-width: 1280px;
+    margin: auto;
+    padding: 60px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: relative;
+    z-index: 2;
+}
     .cta-band::before {
       content: '';
       position: absolute;
@@ -876,13 +877,14 @@
       border: 1px solid rgba(200,144,42,.1);
       border-radius: 50%;
     }
-    .cta-decor::before {
-      content: '';
-      position: absolute;
-      inset: 24px;
-      border: 1px solid rgba(200,144,42,.07);
-      border-radius: 50%;
-    }
+    .cta-decor {
+    position: absolute;
+    right: -50px; /* Shifted so it doesn't cause overflow */
+    top: 50%;
+    transform: translateY(-50%);
+    opacity: 0.3;
+    pointer-events: none;
+}
     .cta-label {
       font-size: .72rem;
       font-weight: 600;
@@ -1000,6 +1002,20 @@
       .footer-top { grid-template-columns: 1fr 1fr; }
       .about-grid { grid-template-columns: 1fr; }
     }
+    @media (max-width: 992px) {
+    .why-layout {
+        grid-template-columns: 1fr;
+        gap: 40px;
+    }
+}
+@media (max-width: 580px) {
+    .why-grid {
+        grid-template-columns: 1fr; /* Stack cards on mobile */
+    }
+    .section-title {
+        font-size: 2rem; /* Reduce font size for small phones */
+    }
+}
     @media (max-width: 768px) {
   .topbar-inner { justify-content: center; }
   .header-top {
@@ -1007,7 +1023,28 @@
     justify-content: space-between; /* Logo on left, Hamburg on right */
     align-items: center;
     flex-wrap: nowrap; /* Prevents logo and button from stacking */
+    .cta-band-inner {
+        flex-direction: column;
+        text-align: center;
+        gap: 30px;
+    }
+    .cta-band h2 {
+        font-size: 1.8rem;
+    }
+    /* Hide decorative circles if they cause issues on tiny screens */
+    .cta-decor {
+        display: none;
+    }
   }
+/* ── FOOTER RESPONSIVE ── */
+.footer-top {
+    max-width: 1280px;
+    margin: auto;
+    padding: 60px 20px;
+    display: grid;
+    grid-template-columns: 1.5fr 0.8fr 0.8fr 1fr;
+    gap: 40px;
+}
   .header-contact { display: none; }
   .nav-links {
     display: none;
@@ -1029,7 +1066,49 @@
   .hamburger { display: flex; }
   .nav-inner { flex-wrap: wrap; } /* allow wrapping only in mobile mode */
 }
+@media (max-width: 992px) {
+    .footer-top {
+        grid-template-columns: 1fr 1fr; /* 2x2 grid on tablets */
+    }
+}
 
+@media (max-width: 580px) {
+    .footer-top {
+        grid-template-columns: 1fr; /* Single column on phones */
+        text-align: center;
+    }
+    
+    .footer-brand {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    .footer-brand p {
+        margin: auto;
+    }
+
+    .footer-social {
+        justify-content: center;
+    }
+
+    .footer-contact-row {
+        justify-content: center;
+        text-align: center;
+    }
+    
+    .footer-bottom {
+        flex-direction: column;
+        text-align: center;
+        padding: 20px;
+    }
+}
+
+/* ── UNIVERSAL OVERFLOW FIX ── */
+.section, .cta-band, footer {
+    width: 100%;
+    overflow: hidden; /* Encapsulates any inner absolute items */
+}
   </style>
 </head>
 <body>
